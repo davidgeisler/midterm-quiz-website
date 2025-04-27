@@ -251,6 +251,13 @@ document.addEventListener("DOMContentLoaded", function() {
     updateSounds();  
   });
 
+  document.body.addEventListener('click', function firstClick() {
+    if (appState === MENU) {
+      bgMusic.play();
+    }
+    document.body.removeEventListener('click', firstClick);
+  });
+  
 // DISPLAY SCORE ON MENU
 function displayMenuScores() {
     document.querySelectorAll(".score").forEach( score => {
